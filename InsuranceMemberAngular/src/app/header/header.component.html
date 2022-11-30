@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Insurance Member Portal </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll custom_nav_Bar" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" [routerLink]="['home']">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" *ngIf="LoggedIn(false)" [routerLink]="['login']">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"  *ngIf="LoggedIn(true)"  [routerLink]="['memberSearch']">Search</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" style="cursor:pointer" *ngIf="LoggedIn(true) && IsAuthor(true)"  [routerLink]="['addBook']">Add Book</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="cursor:pointer" *ngIf="LoggedIn(true) && IsAuthor(false)" [routerLink]="['myBooks']">My Book</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" style="cursor:pointer" *ngIf="LoggedIn(true)" (click)="Logout()">Logout</a>
+                </li>
+                
+            </ul>
+            <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{{userName}} - {{userType}}</a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+  </nav>

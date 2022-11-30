@@ -1,0 +1,15 @@
+thead.thead-dark {
+    background: #00728a;
+    color: #fff;
+    font-weight: 500;
+}
+thead.thead-dark th{
+    font-weight: 400;
+}
+td img{
+    height: 50px;
+    width: 100px;
+    object-fit: cover;}
+td{
+    vertical-align: middle;
+}

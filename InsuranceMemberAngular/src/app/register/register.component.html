@@ -1,0 +1,77 @@
+<!-- <form style="margin: 10px;"> -->
+  <!-- <div class="alert alert-primary" id="alertid" role="alert">
+    A simple primary alert—check it out!
+  </div> -->
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-6 d-none d-md-block img_block">
+              <img src="/assets/insurancePolicy.jpg"
+                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+            </div>
+            <div class="col-md-6 col-lg-6 px-3 d-flex align-items-center">
+              <div class="card-body text-black">
+
+                
+
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                    <span class="h1 fw-bold mb-0">Register</span>
+                  </div>
+
+                  
+                  <div *ngIf="isAlert1" class="alert alert-primary" role="alert">
+                    {{alertMessage}}
+                 </div>
+                 <label style="color: red;">{{ErrorMessage}}</label>
+                  <div class="form-outline mb-1">
+                    <label class="form-label" for="form2Example1">Username </label>
+                      <input type="text" id="form2Example1" [(ngModel)]="UserDataModel.userName" class="form-control form-control-lg" />
+                      
+                    </div>
+                  <div class="form-outline mb-1">
+                    <label class="form-label" for="form2Example2">Password </label>
+                    <input type="password" maxlength="20" id="form2Example2" [(ngModel)]="UserDataModel.userPassword" class="form-control form-control-lg" />
+                    
+                  </div>
+                  <div class="form-outline mb-1">
+                    <label class="form-label" for="form2Example3">Confirm Password </label>
+                    <input type="password" id="form2Example3" [(ngModel)]="UserDataModel.userConfirmPassword" class="form-control form-control-lg" />
+                    
+                  </div>
+                 
+                  <div class="form-outline mb-1">
+                      <input type="radio" id="form2Example6" [(ngModel)]="UserDataModel.userRole"  name="userRole"  value="Admin">Admin &nbsp;
+                      <input type="radio" id="form2Example6" [(ngModel)]="UserDataModel.userRole"  name="userRole"  value="Member">Member <br/>
+                      <!-- <label class="form-label" for="form2Example6">User Type</label> -->
+                      <!-- <select id="select-menu" [(ngModel)]="selectedOption" aria-label=".form-select-sm example"  class="form-select form-select-sm" required name="actionSelection" >
+                          <option  *ngFor="let action of actions"  [value]="action.userType">{{action.userTypeName}}</option>
+                      </select> -->
+                      <!-- <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                          <option selected>Select User Type</option>
+                          <option value="Author">Author</option>
+                          <option value="Reader">Reader</option>
+                          
+                        </select> -->
+                  </div>
+                  
+                  <div class="pt-1 mb-1">
+                    <button class="btn btn-dark btn-lg btn-block" (click)="registerUser()" type="button">Register</button>
+                  </div>
+                  <br/>
+                  <!-- <label style="color: red;">{{ErrorMessage}}</label> -->
+                  
+                  <!-- <a href="#!" class="small text-muted">Terms of use.</a>
+                  <a href="#!" class="small text-muted">Privacy policy</a>
+       -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

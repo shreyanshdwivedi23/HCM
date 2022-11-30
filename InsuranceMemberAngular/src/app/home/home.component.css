@@ -1,0 +1,13 @@
+.Welcometag{
+    text-align: left ;
+    font-size: 35px ;
+    color: #fff;
+    /* background-color: "#efefef"; */
+}
+body {
+    background: transparent;
+}
+.img{
+    text-align: center;
+    margin: auto;
+}

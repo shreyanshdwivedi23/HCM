@@ -1,0 +1,16 @@
+section.vh-100 {
+    background: #ececec !important;
+    min-height: 100vh;
+    height: auto !important;
+     /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #008793); */
+ }
+ .bg_effect {
+     background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #008793);
+     max-height: 250px;
+     height: 250px;
+     width: 100%
+ }
+ .body_wrapper {
+     position: relative;
+     top: -170px;
+ }

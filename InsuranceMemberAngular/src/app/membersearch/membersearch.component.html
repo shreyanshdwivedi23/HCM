@@ -1,0 +1,116 @@
+
+<div class="card">
+    <div class="card-header">
+      Member Search
+    </div>
+  <div class="container p-5">
+  
+      <div class="row">
+        <div class="form-group col-md-6 col-xs-12">
+          <label for="inputEmail4">Member ID</label>
+          <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' class="form-control" [(ngModel)]="memberModel.memberId" id="inputEmail4" placeholder="Member Id">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">First Name</label>
+          <input type="text"  class="form-control" [(ngModel)]="memberModel.memberFirstName" id="inputPassword4" placeholder="First Name">
+        </div>
+        
+      </div>
+      <div class="row mt-2">
+          <div class="form-group col-md-6">
+            <label for="inputCategory">Last Name</label>
+            <input type="text" class="form-control" [(ngModel)]="memberModel.memberLastName" id="inputCategory" placeholder="Last Name">
+          </div>
+          <div class="form-group col-md-6">
+              <label for="inputPassword4">Policy ID</label>
+              <input type="text" class="form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57' [(ngModel)]="memberModel.policyId" id="inputPassword8" placeholder="Policy Id">
+            </div>
+        </div>
+        <div class="row mt-2">
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Policy Status</label>
+                <select class="form-select"  [(ngModel)]="memberModel.policyStatusId" placeholder="Select Policy Status" aria-label="Default select example">
+                    <option selected value="0">--Policy Status--</option>
+                    <option *ngFor="let sts of policyStatusList"  
+                            value={{sts.policyStatusId}}>  
+                        {{sts.policyStatusName}}  
+                    </option> 
+                </select>  
+          </div>
+     
+      <div class="pt-1 mb-4">
+          <button class="btn btn-primary btn-lg btn-block" (click)="searchMemberPolicy()" type="button">Search</button>
+          &nbsp;<button class="btn btn-primary btn-lg btn-block" (click)="AddNewPolicy()" *ngIf="!isHide"  type="button">Add</button>
+        </div>
+        
+        
+        <label style="color: red;">{{ErrorMessage}}</label>
+
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <!-- <th scope="col">#Sno</th> -->
+              <th scope="col">Member Id</th>
+              <th scope="col">Policy ID</th>
+              <th scope="col">Username</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Policy Status</th>
+              <th scope="col">Premium Amount</th>
+              <th scope="col">Policy Type</th>
+              <th scope="col">Effective Date</th>
+              <th scope="col" *ngIf="isHide">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let book of memberModels">
+                  <td>{{book.memberId}}</td>
+                  <td>{{book.policyId}}</td>
+                  <td>{{book.memberUsername}}</td>
+                  <td>{{book.memberFirstName}}</td>
+                  <td>{{book.memberLastName}}</td>
+                  <td>{{book.policyStatusName}}</td>
+                  <td>{{book.policyPremiumAmount}}</td>
+                  <td>{{book.policyType}}</td>
+                  <td>{{book.policyEffectiveDate | date: 'dd/MM/yyyy'}}</td>
+                  <td *ngIf="isHide"><ul class="list-inline m-0">
+                    <li class="list-inline-item">
+                        <button class="btn btn-primary btn-sm rounded-0" (click) ="AddPolicy(book.memberId)" type="button" data-toggle="tooltip" data-placement="top" title="Add Policy"><i class="fa fa-table"></i></button>
+                    </li>
+                    <li class="list-inline-item">
+                        <button class="btn btn-success btn-sm rounded-0" (click)="UpdatePolicy(book.memberId,book.policyId)" type="button" data-toggle="tooltip" data-placement="top" title="Edit Policy"><i class="fa fa-edit"></i></button>
+                    </li>
+                    
+                </ul></td>
+              </tr>
+            
+          </tbody>
+        </table>
+        </div>
+        </div>
+<!-- <div class="custom_card" *ngFor="let book of memberModels">
+        <div class="card" style="width: 18rem;">
+
+          
+          <div class="card-body pb-0">
+            <h5 class="card-title mb-0">{{book.memberUsername}}</h5>
+            
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">member Id : {{book.memberId}}</li>
+            <li class="list-group-item">member Policy ID : {{book.policyId}}</li>
+            <li class="list-group-item">member Username : {{book.memberUsername}}</li>
+            <li class="list-group-item">member FirstName : {{book.memberFirstName}}</li>
+            <li class="list-group-item">member LastName : {{book.memberLastName}}</li>
+            <li class="list-group-item">member Policy Status : {{book.policyStatusName}}</li>
+            <li class="list-group-item">member DateOfBirth : {{book.policyEffectiveDate | date: 'dd/MM/yyyy'}}</li>
+          </ul>
+          <div class="card-body text-center">
+            <button class="btn btn-primary" type="button" (click)="viewBookDetails(book.memberId)">View</button>
+            
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+   -->
